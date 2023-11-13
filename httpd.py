@@ -98,7 +98,6 @@ class HTTPRequestParser:
             if code != OK:
                 return code, url_path
 
-            # Check if path is dir
             if os.path.isdir(url_path) and not url_path.endswith("/"):
                 url_path += "/"
 
@@ -107,7 +106,6 @@ class HTTPRequestParser:
                 if not os.path.isfile(url_path):
                     return FORBIDDEN, url_path
 
-            # Check if path exists
             if not os.path.isfile(url_path):
                 return NOT_FOUND, url_path
 
