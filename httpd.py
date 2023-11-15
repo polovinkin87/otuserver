@@ -11,27 +11,7 @@ import multiprocessing
 import re
 from typing import Tuple
 from http_response import generate_response
-
-CHUNK_SIZE = 8192
-PROTOCOL = "HTTP/1.0"
-
-OK = 200
-BAD_REQUEST = 400
-FORBIDDEN = 403
-NOT_FOUND = 404
-METHOD_NOT_ALLOWED = 405
-INTERNAL_ERROR = 500
-ERRORS = {
-    OK: "OK",
-    BAD_REQUEST: "Bad Request",
-    FORBIDDEN: "Forbidden",
-    NOT_FOUND: "Not Found",
-    METHOD_NOT_ALLOWED: "Method Not Allowed",
-    INTERNAL_ERROR: "Internal Server Error"
-}
-
-HEXDIG = '0123456789ABCDEFabcdef'
-HEXTOBYTE = None
+from config import *
 
 
 class HTTPRequestParser:
